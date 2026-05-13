@@ -2,7 +2,12 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
   {
-    name: {
+    productName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    brandName: {
       type: String,
       required: true,
       trim: true,
@@ -12,6 +17,10 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     price: {
+      type: Number,
+      required: true,
+    },
+    cutPrice: {
       type: Number,
       required: true,
     },

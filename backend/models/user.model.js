@@ -46,10 +46,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    orders: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order",
+      },
+    ],
   },
   { timestamps: true },
 );
 
-const userModel = mongoose.model("Users", userSchema);
+const userModel = mongoose.model("User", userSchema);
 
 export default userModel;
